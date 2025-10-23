@@ -1,1 +1,55 @@
 /* Globale styles her */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-family: var(--cabin);
+  color: var(--gray-100);
+  margin-bottom: 1rem;
+
+}
+h1 {
+  font-size: 45px;
+}
+h2 {
+  font-size: 35px;
+}
+h3 {
+  font-size: 25px;
+}
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 15px;
+}
+p {
+  font-size: 14px;
+  color: var(--slate);
+  font-family: var(--lato);
+  max-width: 50ch;
+  margin-bottom: 10px;
+}
+a {
+  text-decoration: none;
+}
+
+:root {
+  /* Color */
+  --green: #4eaf4e;
+  --grey: #f5f5f5;
+  --yellow: #ffcc4a;
+  --darkest: #181818;
+  --slate: #595566;
+  --white: #fff;
+
+  /* Font */
+  --cabin: font-family: "Cabin", sans-serif;
+
+  --lato: font-family: "Lato", sans-serif;
+;
+}

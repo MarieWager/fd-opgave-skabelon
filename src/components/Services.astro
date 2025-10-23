@@ -2,15 +2,21 @@
 //@ts-nocheck
 import servicesData from "@data/services.json";
 console.log(servicesData);
+import Button from "./Button.astro";
 ---
 
 <ul>
   {
     servicesData.services.map((service) => (
       <li>
-        <h2>{service.title}</h2>
-        <p>{service.description}</p>
-        <a href="#0">{service.buttonText}</a>
+        <article>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+        </article>
+        <Button variant="black">
+          {" "}
+          <a href="#0">{service.buttonText}</a>
+        </Button>
       </li>
     ))
   }
@@ -18,7 +24,45 @@ console.log(servicesData);
 
 <style>
   @layer components {
+    p {
+      color: var(--white);
+    }
+    ul {
+      position: absolute;
+      top: 70%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: calc(1200px + 38px * 2);
+      padding: 0 110px 0 110px;
+      gap: 20px;
+      color: var(--white);
+      @media (max-width: 780px) {
+        grid-template-columns: 1fr;
+      }
+    }
     li {
+      list-style: none;
+      display: grid;
+      grid-template: subgrid;
+      grid-template-rows: 1fr auto;
+
+      width: 100%;
+      backdrop-filter: blur(32px);
+      border-radius: 20px;
+      background-color: rgba(38, 38, 38, 0.9);
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: left;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      grid-column: 1;
+      grid-row: 1;
     }
   }
 </style>

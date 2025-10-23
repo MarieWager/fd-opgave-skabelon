@@ -1,0 +1,125 @@
+---
+import { Image } from "astro:assets";
+import MeetingImage from "@assets/images/ContentIndexImg.png";
+import Checkmark from "@icons/checkmark.svg";
+---
+
+<section>
+  <div class="container">
+    <div class="img-wrap">
+      <div class="green"></div>
+      <Image src={MeetingImage} alt="Image of a meeting" class="photo" />
+    </div>
+    <article>
+      <h5>We'll work with you</h5>
+      <h2>What To Expect</h2>
+      <p>Our collaboration is built on transparency, efficiency, and measurable results. Together, we create strategies tailored to your unique needs and goals.</p>
+      <div class="list"></div>
+      <div class="list-item">
+        <Checkmark class="checkmark" />
+        <p>Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.</p>
+      </div>
+      <div class="list-item">
+        <Checkmark class="checkmark" />
+        <p>Identify opportunities to optimize processes and implement impactful solutions with measurable results.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    section {
+      margin-top: 15rem;
+    }
+
+    .container {
+      display: flex;
+      padding: 0 38px;
+      margin: 0 auto;
+      gap: 55px;
+      @media (max-width: 1025px) {
+        flex-direction: column;
+        gap: 38px;
+      }
+    }
+
+    .img-wrap {
+      position: relative;
+      flex-shrink: 0;
+
+      .photo {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+        z-index: 2;
+        border-radius: 28px;
+      }
+
+      .green {
+        position: absolute;
+        top: -26px;
+        left: -28px;
+        width: 183px;
+        height: 164px;
+        background-color: #4eaf4e;
+        z-index: 1;
+        border-radius: 20px;
+      }
+
+      img:first-child {
+        position: absolute;
+        top: -58px;
+        left: -240px;
+        width: 100%;
+        height: 78%;
+        z-index: 0;
+      }
+    }
+
+    article {
+      width: 480px;
+      margin-top: -45px;
+      h5 {
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        line-height: 150%;
+        margin-bottom: 14px;
+      }
+      h2 {
+        line-height: 150%;
+        margin-bottom: 14px;
+      }
+
+      p:not(.list-item p) {
+        margin-bottom: 25px;
+      }
+
+      .list-item {
+        display: flex;
+
+        p {
+          line-height: 115%;
+        }
+
+        .checkmark {
+          flex-shrink: 0;
+          color: #4eaf4e;
+          margin-right: 18px;
+          width: 20px;
+          height: 20px;
+        }
+
+        + .list-item {
+          margin-top: 16px;
+        }
+      }
+
+      @media (max-width: 1025px) {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+  }
+</style>

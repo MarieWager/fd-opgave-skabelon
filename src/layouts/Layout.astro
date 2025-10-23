@@ -1,5 +1,7 @@
 ---
 import "@styles/main.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -13,8 +15,11 @@ import "@styles/main.css";
       @layer reset, global, components, overrides;
     </style>
   </head>
+
   <body>
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 

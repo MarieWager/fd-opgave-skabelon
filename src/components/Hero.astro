@@ -2,29 +2,56 @@
 import { Image } from "astro:assets";
 import Services from "./Services.astro";
 import CEOImage from "@assets/images/ceo.png";
+import Button from "./Button.astro";
 ---
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Empowering Your Business Growth</h1>
-    <p>
-      Discover tailored strategies and expert insights to take your business to
-      the next level. Let us help you navigate challenges and achieve
-      sustainable success.
-    </p>
-    <a href="#0">Book a Meeting</a>
+  <div class="hero-1-1">
+    <div class="wrap">
+      <article>
+        <h1>Empowering Your Business Growth</h1>
+        <p>Discover tailored strategies and expert insights to take your business to the next level. Let us help you navigate challenges and achieve sustainable success.</p>
+      </article>
+      <Button variant="white">
+        <a href="#0">Book a Meeting</a>
+      </Button>
+    </div>
+    <Image src={CEOImage} alt="CEO" class="" />
   </div>
-  <Image src={CEOImage} alt="CEO" />
 
   <Services />
-</section>
 
-<style>
-  /* Styles her */
-  @layer components {
-    .hero {
-      background-color: #f3f4f6;
-      padding: 2rem;
+  <style>
+    /* Styles her */
+    @layer components {
+      p {
+        color: var(--white);
+      }
+      .hero {
+        background-color: var(--darkest);
+        color: var(--white);
+      }
+      .hero-1-1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .wrap {
+        margin-left: 7rem;
+        padding-top: 4rem;
+      }
+      article {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      img {
+        position: relative;
+        right: 0;
+        aspect-ratio: 6 / 5;
+      }
     }
-  }
-</style>
+  </style>
+</section>
